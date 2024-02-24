@@ -35,7 +35,7 @@ fi
 echo -N ${chain}
 
 # Allow source IPs
-for addr in $(curl https://www.cloudflare.com/ips-v4); do
+for addr in $(curl https://www.cloudflare.com/ips-v4/); do
   echo -A ${chain} -s ${addr} -j RETURN -m comment --comment "static-entry"
 done
 
